@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        // Object destructuring
+
+        let person = {
+            name: 'Ironhacker',
+            age: 25,
+            favoriteMusic: 'Metal',
+        }
+
+        const { name, age, favoriteMusic } = person
+
+        console.log(`Hello, ${name}.`)
+        console.log(`You are ${age} years old.`)
+        console.log(`Your favorite music is ${favoriteMusic}.`)
+
+
+
+
+
+
+
+
+        let dog = {
+            nick: 'Popino',
+            birth: 2010
+        }
+
+        // Default values
+        const { nick, birth, country = 'Spain' } = dog
+
+        console.log(`El perro ${nick} nació en el año ${birth} y es de nacionalidad ${country}`)
+
+
+
+
+
+
+
+
+
+
+
+        const person2 = {
+            name2: 'Ironhacker',
+            age2: 25,
+            favoriteMusic2: 'Metal',
+            address: {
+                street: 'Super Cool St',
+                number: 123,
+                city: 'Miami'
+            }
+        }
+
+
+        const {
+            name2,
+            age2,
+            address: { street, city }
+        } = person2
+
+        console.log(`${name2} vive en la calle ${street} de la ciudad ${city}`)
+
+
+
+
+
+
+
+        // Argument destructuring
+        const showStudentInfo = ({ name, country }) => {
+            console.log(`Nombre ${name}, país ${country}`)
+        }
+
+        const carola = { name: 'Carol', country: 'Spain' }
+
+        showStudentInfo(carola)
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Array destructuting
+
+        const campuses = ['madrid', 'barcelona', 'miami']
+
+        const [firstCampus, secondCampus, thirdCampus, fourthCampus = 'berlin'] = campuses
+
+        console.log(thirdCampus) // miami
+
+
+
+
+
+        const [, secondValue] = campuses
+
+        console.log(secondValue) // <== barcelona
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
